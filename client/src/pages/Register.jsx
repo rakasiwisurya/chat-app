@@ -6,7 +6,7 @@ import styled from "styled-components";
 import Logo from "../assets/logo.svg";
 import { registerRoute } from "../utils/APIRoutes";
 
-function Register() {
+export default function Register() {
   const navigate = useNavigate();
 
   const [values, setValues] = useState({
@@ -161,5 +161,3 @@ const FormContainer = styled.div`
     }
   }
 `;
-
-export default Register;

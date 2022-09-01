@@ -10,7 +10,7 @@ import { avatarRoute } from "../utils/APIRoutes";
 
 const api = "https://api.multiavatar.com/45678945";
 
-function Avatar() {
+export default function Avatar() {
   const navigate = useNavigate();
 
   const [avatars, setAvatars] = useState([]);
@@ -148,5 +148,3 @@ const Container = styled.div`
     }
   }
 `;
-
-export default Avatar;

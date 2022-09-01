@@ -82,3 +82,27 @@ exports.login = async (req, res) => {
     });
   }
 };
+
+exports.avatar = async (req, res) => {
+  const { image } = req.body;
+  const { id } = req.params;
+
+  try {
+    const data = await User.findByIdAndUpdate(id, {
+      isAvatarImageSet: true,
+      avatarImage: image,
+    });
+
+    res.send({
+      status: true,
+      message: "Success set avatar",
+      data,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({
+      status: false,
+      message: "Internal server error",
+    });
+  }
+};
